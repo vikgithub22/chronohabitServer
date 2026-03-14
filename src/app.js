@@ -17,10 +17,10 @@ const app = express();
 app.use(helmet());
 
 // ── CORS ──────────────────────────────────────────────────────────────────────
+
 app.use(cors({
-  origin:      process.env.CLIENT_ORIGIN || 'http://localhost:4200',
-  credentials: true,
-  methods:     ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+  origin: '*', // ALLOW ALL ORIGINS TEMPORARILY
+  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization'],
 }));
 
